@@ -5,11 +5,11 @@ Edit images with [jspaint](http://github.com/1j01/atom-jspaint) in Atom.
 
 Currently supports the following file extensions:
 
-  * `.gif`
-  * `.ico`
-  * `.jpeg`
-  * `.jpg`
-  * `.png`
+ * `.gif`
+ * `.ico`
+ * `.jpeg`
+ * `.jpg`
+ * `.png`
 
 
 Use `paint:new` for a blank canvas.
@@ -23,6 +23,7 @@ Use `paint:new` for a blank canvas.
 * Commands (`paint:invert`, `paint:toggle-toolbox`, etc.)
 * Hide menus
 * Status bar integration
+* Theme integration
 
 I *should* write specs...
 

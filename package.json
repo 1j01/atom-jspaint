@@ -1,15 +1,15 @@
 {
-  "name": "paint",
-  "version": "0.0.0",
-  "description": "Edit images in-editor with jspaint",
-  "main": "./lib/main",
-  "repository": "https://github.com/1j01/atom-jspaint",
-  "license": "MIT",
-  "engines": {
-    "atom": "*"
-  },
-  "dependencies": {
-    "fs-plus": "2.x",
-    "underscore-plus": "1.x"
-  }
+	"name": "paint",
+	"version": "0.0.0",
+	"description": "Edit images in-editor with jspaint",
+	"main": "./lib/main",
+	"repository": "https://github.com/1j01/atom-jspaint",
+	"license": "MIT",
+	"engines": {
+		"atom": "*"
+	},
+	"dependencies": {
+		"fs-plus": "2.x",
+		"underscore-plus": "1.x"
+	}
 }
