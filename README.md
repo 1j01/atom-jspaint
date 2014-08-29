@@ -21,6 +21,8 @@ Use `paint:new` for a blank canvas.
 * Serialization (using `data:` URIs)
 * Save images (somehow)
 * Commands (`paint:invert`, `paint:toggle-toolbox`, etc.)
+* Hide menus
+* Status bar integration
 
 I *should* write specs...
 
