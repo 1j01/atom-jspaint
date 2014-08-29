@@ -6,21 +6,15 @@ path = require 'path'
 module.exports =
 class ImageEditorView extends ScrollView
   @content: ->
-    @div class: 'image-view', tabindex: -1, =>
-      @div class: 'image-controls', outlet: 'imageControls', =>
-        @a outlet: 'whiteTransparentBackgroundButton', class: 'image-controls-color-white', value: '#fff', =>
-          @text 'white'
-        @a outlet: 'blackTransparentBackgroundButton', class: 'image-controls-color-black', value: '#000', =>
-          @text 'black'
-      @div class: 'image-container', =>
-        @div class: 'image-container-cell', =>
-          @img outlet: 'image'
+    @div class: 'paint', tabindex: -1, =>
+      @iframe src: 'http://1j01.github.io/jspaint/', outlet: 'iframe'
+      #@img outlet: 'image'
 
   initialize: (editor) ->
     super
 
     @loaded = false
-    @image.hide().attr('src', editor.getUri())
+    ###@image.hide().attr('src', editor.getUri())
 
     @image.load =>
       @originalHeight = @image.height()
@@ -28,15 +22,15 @@ class ImageEditorView extends ScrollView
       @loaded = true
       @image.show()
 
-    @command 'image-view:zoom-in', => @zoomIn()
-    @command 'image-view:zoom-out', => @zoomOut()
-    @command 'image-view:reset-zoom', => @resetZoom()
+    @command 'paint:zoom-in', => @zoomIn()
+    @command 'paint:zoom-out', => @zoomOut()
+    @command 'paint:reset-zoom', => @resetZoom()
 
     @whiteTransparentBackgroundButton.setTooltip("Use white transparent background")
-    @blackTransparentBackgroundButton.setTooltip("Use black transparent background")
+    @blackTransparentBackgroundButton.setTooltip("Use black transparent background")###
 
   afterAttach: (onDom) ->
-    return unless onDom
+    return #unless onDom
 
     if pane = @getPane()
       @imageControls.find('a').on 'click', (e) =>
@@ -54,15 +48,15 @@ class ImageEditorView extends ScrollView
 
   # Zooms the image out by 10%.
   zoomOut: ->
-    @adjustSize(0.9)
+    @adjustSize(0.73)
 
   # Zooms the image in by 10%.
   zoomIn: ->
-    @adjustSize(1.1)
+    @adjustSize(1/0.73)
 
   # Zooms the image to its normal width and height.
   resetZoom: ->
-    return unless @loaded and @isVisible()
+    return #unless @loaded and @isVisible()
 
     @image.width(@originalWidth)
     @image.height(@originalHeight)
@@ -71,7 +65,7 @@ class ImageEditorView extends ScrollView
   #
   # factor - A {Number} to multiply against the current size.
   adjustSize: (factor) ->
-    return unless @loaded and @isVisible()
+    return #unless @loaded and @isVisible()
 
     newWidth = @image.width() * factor
     newHeight = @image.height() * factor
@@ -82,6 +76,6 @@ class ImageEditorView extends ScrollView
   #
   # color - A {String} that is a valid CSS hex color.
   changeBackground: (color) ->
-    return unless @loaded and @isVisible() and color
+    return #unless @loaded and @isVisible() and color
     # TODO: in the future, probably validate the color
     @image.css 'background-color', color

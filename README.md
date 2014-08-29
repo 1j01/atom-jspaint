@@ -1,7 +1,6 @@
-# Image View package [![Build Status](https://travis-ci.org/atom/image-view.svg?branch=master)](https://travis-ci.org/atom/image-view)
+# Paint package <!--[![Build Status](https://travis-ci.org/1j01/atom-jspaint.svg?branch=master)](https://travis-ci.org/1j01/atom-jspaint)-->
 
-Open images in an editor in Atom. Support zooming via `cmd-+`, `cmd--`, and
-`cmd-0`.
+Edit images with [jspaint](http://github.com/1j01/atom-jspaint) in Atom.
 
 
 Currently supports the following file extensions:
@@ -12,4 +11,16 @@ Currently supports the following file extensions:
   * `.jpg`
   * `.png`
 
-![](https://f.cloud.github.com/assets/671378/2241669/7df82fec-9cdc-11e3-992d-f19a7235ebda.png)
+
+Use `paint:new` for a blank canvas.
+
+
+## Todo(!!!)
+
+* Load images (by injecting `window.intent={data:uri}`)
+* Serialization (using `data:` URIs)
+* Save images (somehow)
+* Commands (`paint:invert`, `paint:toggle-toolbox`, etc.)
+
+I *should* write specs...
+

@@ -29,24 +29,24 @@ describe "ImageEditorView", ->
   it "displays the image for a path", ->
     expect(view.image.attr('src')).toBe filePath
 
-  describe "image-view:zoom-in", ->
+  describe "paint:zoom-in", ->
     it "increases the image size by 10%", ->
-      view.trigger 'image-view:zoom-in'
+      view.trigger 'paint:zoom-in'
       expect(view.image.width()).toBe 11
       expect(view.image.height()).toBe 11
 
-  describe "image-view:zoom-out", ->
+  describe "paint:zoom-out", ->
     it "decreases the image size by 10%", ->
-      view.trigger 'image-view:zoom-out'
+      view.trigger 'paint:zoom-out'
       expect(view.image.width()).toBe 9
       expect(view.image.height()).toBe 9
 
-  describe "image-view:reset-zoom", ->
+  describe "paint:reset-zoom", ->
     it "restores the image to the original size", ->
-      view.trigger 'image-view:zoom-in'
+      view.trigger 'paint:zoom-in'
       expect(view.image.width()).not.toBe 10
       expect(view.image.height()).not.toBe 10
-      view.trigger 'image-view:reset-zoom'
+      view.trigger 'paint:reset-zoom'
       expect(view.image.width()).toBe 10
       expect(view.image.height()).toBe 10
 
@@ -57,7 +57,7 @@ describe "ImageEditorView", ->
       atom.workspaceView.attachToDom()
 
       waitsForPromise ->
-        atom.packages.activatePackage('image-view')
+        atom.packages.activatePackage('paint')
 
       waitsForPromise ->
         atom.workspaceView.open(filePath)

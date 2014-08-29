@@ -1,13 +1,15 @@
-'.platform-darwin .image-view':
-  'cmd-+': 'image-view:zoom-in'
-  'cmd-=': 'image-view:zoom-in'
-  'cmd--': 'image-view:zoom-out'
-  'cmd-_': 'image-view:zoom-out'
-  'cmd-0': 'image-view:reset-zoom'
+###
+'.platform-darwin .paint':
+  'cmd-+': 'paint:zoom-in'
+  'cmd-=': 'paint:zoom-in'
+  'cmd--': 'paint:zoom-out'
+  'cmd-_': 'paint:zoom-out'
+  'cmd-0': 'paint:reset-zoom'
 
-'.platform-win32 .image-view':
-  'ctrl-+': 'image-view:zoom-in'
-  'ctrl-=': 'image-view:zoom-in'
-  'ctrl--': 'image-view:zoom-out'
-  'ctrl-_': 'image-view:zoom-out'
-  'ctrl-0': 'image-view:reset-zoom'
+'.platform-win32 .paint':
+  'ctrl-+': 'paint:zoom-in'
+  'ctrl-=': 'paint:zoom-in'
+  'ctrl--': 'paint:zoom-out'
+  'ctrl-_': 'paint:zoom-out'
+  'ctrl-0': 'paint:reset-zoom'
+###

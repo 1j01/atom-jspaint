@@ -19,7 +19,7 @@ describe "ImageEditor", ->
       atom.workspace = atom.workspaceView.model
 
       waitsForPromise ->
-        atom.packages.activatePackage('image-view')
+        atom.packages.activatePackage('paint')
 
       runs ->
         atom.workspaceView = new WorkspaceView()
@@ -31,7 +31,7 @@ describe "ImageEditor", ->
       runs ->
         expect(atom.workspace.getActivePaneItem().getTitle()).toBe 'binary-file.png'
         atom.workspaceView.destroyActivePaneItem()
-        atom.packages.deactivatePackage('image-view')
+        atom.packages.deactivatePackage('paint')
 
         atom.workspaceView.open(path.join(__dirname, 'fixtures', 'binary-file.png'))
 

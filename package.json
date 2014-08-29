@@ -1,9 +1,9 @@
 {
-  "name": "image-view",
-  "version": "0.36.0",
-  "description": "Open images in an editor",
+  "name": "paint",
+  "version": "0.0.0",
+  "description": "Edit images in-editor with jspaint",
   "main": "./lib/main",
-  "repository": "https://github.com/atom/image-view",
+  "repository": "https://github.com/1j01/atom-jspaint",
   "license": "MIT",
   "engines": {
     "atom": "*"
