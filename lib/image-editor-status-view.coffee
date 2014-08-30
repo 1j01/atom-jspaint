@@ -14,12 +14,12 @@ class ImageEditorStatusView extends View
 			@updateImageSize()
 
 	attach: ->
-		@statusBar.appendLeft this
+		@statusBar.appendLeft @
 
 	afterAttach: ->
 		@updateImageSize()
 
-	getImageSize: ({originalHeight, originalWidth}) ->
+	displyDimensions: ({originalHeight, originalWidth}) ->
 		@imageSizeStatus.text("#{originalWidth}x#{originalHeight}").show()
 
 	updateImageSize: ->
@@ -27,11 +27,11 @@ class ImageEditorStatusView extends View
 		if editor instanceof ImageEditor
 			view = atom.workspaceView.getActiveView()
 			if view.loaded
-				@getImageSize(view)
+				@displyDimensions(view)
 			else
 				# Wait for image to load before getting originalWidth and originalHeight
 				view.image.load =>
 					# Make sure view is still active since load is async
-					@getImageSize(view) if view is atom.workspaceView.getActiveView()
+					@displyDimensions(view) if view is atom.workspaceView.getActiveView()
 		else
 			@imageSizeStatus.hide()

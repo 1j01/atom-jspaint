@@ -17,7 +17,7 @@ Use `paint:new` for a blank canvas.
 
 ## Todo(!!!)
 
-* Load images (by injecting `window.intent={data:uri}`)
+* Load images: \*checks off\*, _\*shudders\*_
 * Serialization (using `data:` URIs)
 * Save images (somehow)
 * Commands (`paint:invert`, `paint:toggle-toolbox`, etc.)
