@@ -1,0 +1,10 @@
+
+'.workspace .paint':
+	'ctrl-z': 'paint:undo'
+	'ctrl-shift-z': 'paint:redo'
+	'ctrl-y': 'paint:redo'
+	'f4': 'paint:redo'
+	'ctrl-i': 'paint:invert'
+	'ctrl-a': 'paint:select-all'
+	'esc': 'paint:deselect-all'
+	'ctrl-shift-g': 'paint:render-history-as-gif'

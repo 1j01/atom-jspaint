@@ -25,6 +25,9 @@ class ImageEditorView extends ScrollView
 			@command 'paint:redo', => paint.redo()
 			@command 'paint:invert', => paint.invert()
 			@command 'paint:clear-image', => paint.clear()
+			@command 'paint:select-all', => paint.select_all()
+			@command 'paint:deselect-all', => paint.deselect() # also removes textboxes which maybe it shouldn't
+			@command 'paint:render-history-as-gif', => paint.render_history_as_gif()
 			
 			# Load the image into paint
 			image = new Image
