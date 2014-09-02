@@ -1,4 +1,4 @@
-# Paint package <!--[![Build Status](https://travis-ci.org/1j01/atom-jspaint.svg?branch=master)](https://travis-ci.org/1j01/atom-jspaint)-->
+# Paint package
 
 Edit images with [jspaint](http://github.com/1j01/atom-jspaint) in Atom.
 
@@ -10,6 +10,7 @@ Currently supports the following file extensions:
  * `.jpeg`
  * `.jpg`
  * `.png`
+ * `.bmp`
 
 
 Use `paint:new` for a blank canvas.
