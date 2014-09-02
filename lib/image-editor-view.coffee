@@ -17,7 +17,6 @@ class ImageEditorView extends ScrollView
 		
 		uri = editor.getUri()
 		
-		console.log "loading iframe", @iframe[0]
 		@iframe.load =>
 			paint = @iframe[0].contentWindow
 			
@@ -27,35 +26,14 @@ class ImageEditorView extends ScrollView
 			@command 'paint:invert', => paint.invert()
 			@command 'paint:clear-image', => paint.clear()
 			
-			# The Worst Way To Load An Image™
+			# Load the image into paint
+			image = new Image
 			
-			# We take a URI (Universal Resource Indicator),
-			# Load the URI as an image,
-			# Make a canvas, and draw the image to the canvas;
-			# Then we get the data URI from the canvas so we can
-			# Send it to the page(!), which
-			# Loads the URI as an image, and finally
-			# Puts it on the canvas
-			# SOUNDS LEGIT LET'S SHIP IT
-			
-			img = document.createElement 'img'
-			# paint.open_from_Image(img, uri) doesn't work 'cause it can't pass the image into the iframe...
-			# maybe if it was an Image? I doubt that would make a difference
-			# no wait, create the image from within the page's document; that might work
-			console.log "loading image", img
-			$(img).load =>
-				console.log "loaded image", img
-				canvas = document.createElement 'canvas'
-				ctx = canvas.getContext '2d'
-				canvas.width = img.width
-				canvas.height = img.height
-				ctx.drawImage(img, 0, 0)
-				data_uri = canvas.toDataURL()
-				console.log "opening image"
-				paint.open_from_URI data_uri, uri
-				
+			$(image).load =>
+				paint.open_from_Image(image, uri)
 				@loaded = true
-			img.src = uri
+			
+			image.src = uri
 
 	afterAttach: (onDom) ->
 		return unless onDom
