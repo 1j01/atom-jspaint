@@ -3,6 +3,7 @@ _ = require 'underscore-plus'
 ImageEditor = require './image-editor'
 
 openUri = (uriToOpen)->
+	console.log uriToOpen
 	ext = path.extname(uriToOpen).toLowerCase()
 	if ext.match /.(png|gif|jpe?g|bmp|ico)$/
 		new ImageEditor(uriToOpen)

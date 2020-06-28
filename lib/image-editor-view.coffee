@@ -7,8 +7,8 @@ module.exports =
 class ImageEditorView extends ScrollView
 	@content: ->
 		@div class: 'paint', tabindex: -1, =>
-			@iframe src: 'http://1j01.github.io/jspaint/', outlet: 'iframe'
-			#@img outlet: 'image'
+			#@iframe src: "file://#{path.join __dirname, '..', 'jspaint', 'index.html'}", outlet: 'iframe'
+			@iframe src: 'atom://paint/jspaint/index.html', outlet: 'iframe'
 
 	initialize: (editor) ->
 		super
